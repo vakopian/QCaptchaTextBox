@@ -136,13 +136,13 @@
 
 		protected function GetControlHtml() {
 			$strStyle = $this->GetStyleAttributes();
-			if ($strStyle)
+			if ($strStyle) {
 				$strStyle = sprintf('style="%s"', $strStyle);
-			
+			}
 			// A refresh Captch Button
 			$refreshButton = new QLinkButton($this);
 			$refreshButton->Text = QApplication::Translate("Refresh CAPTCHA");
-			$refreshButton->AddAction(new QClickEvent(), new QAjaxAction($this, "Refresh"));
+			$refreshButton->AddAction(new QClickEvent(), new QAjaxControlAction($this, "Refresh"));
 			
 			switch ($this->strTextMode) {
 				case QTextMode::MultiLine:
@@ -151,7 +151,7 @@
 				default:
 					$strToReturn = sprintf('<div class="wrapper_captcha"><img class="captcha" src="%s" alt="Security Code" /><span class="captcha-refresh">%s</span><input type="text" name="%s" id="%s" value="' . $this->strFormat . '" %s%s /></div>',
 						__PLUGIN_ASSETS__ . "/QCaptchaTextBox/captcha.php?cId=" . $this->strControlId,
-						$refreshButton->Render(false);
+						$refreshButton->Render(false),
 						$this->strControlId,
 						$this->strControlId,
 						QApplication::HtmlEntities($this->strText),
