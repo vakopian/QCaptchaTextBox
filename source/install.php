@@ -3,7 +3,7 @@
 $objPlugin = new QPlugin();
 $objPlugin->strName = "QCaptchaTextBox";
 $objPlugin->strDescription = 'Render a textbox with Captcha Image to prevent Spam bot to hack a form.';
-$objPlugin->strVersion = "1.1";
+$objPlugin->strVersion = "1.2";
 $objPlugin->strPlatformVersion = "2.0.2";
 $objPlugin->strAuthorName = "Mike Quirion";
 $objPlugin->strAuthorEmail ="mikequirion [at] gmail [dot] com";

@@ -150,7 +150,7 @@
 				case QTextMode::SingleLine:
 				default:
 					$strToReturn = sprintf('<div class="wrapper_captcha"><img class="captcha" src="%s" alt="Security Code" /><span class="captcha-refresh">%s</span><input type="text" name="%s" id="%s" value="' . $this->strFormat . '" %s%s /></div>',
-						__PLUGIN_ASSETS__ . "/QCaptchaTextBox/captcha.php?cId=" . $this->strControlId,
+						__PLUGIN_ASSETS__ . "/QCaptchaTextBox/captcha.php?cId=" . $this->strControlId.'&r='.time(),
 						$refreshButton->Render(false),
 						$this->strControlId,
 						$this->strControlId,
